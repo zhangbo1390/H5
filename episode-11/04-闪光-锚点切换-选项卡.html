@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闪光效果,锚点切换,tab选项卡,线性背景</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{color: #fff;
+            background: linear-gradient(
+                    135deg,
+                    #708090 22px,
+                    #d9ecff 22px,
+                    #d9ecff 24px,
+                    transparent 24px,
+                    transparent 67px,
+                    #d9ecff 67px,
+                    #d9ecff 69px,
+                    transparent 69px
+            ),
+            linear-gradient(
+                    225deg,
+                    #708090 22px,
+                    #d9ecff 22px,
+                    #d9ecff 24px,
+                    transparent 24px,
+                    transparent 67px,
+                    #d9ecff 67px,
+                    #d9ecff 69px,
+                    transparent 69px
+            )0 64px;
+
+
+            background-color: #708090;
+            background-size: 64px 128px;
+        }
+        ul li{list-style: none;}
+        .box{width: 300px;height: 300px;margin: 100px auto;background: darkgray;}
+        .box a{position: relative;display: block;width: 100%;height: 100%; }
+        .box a:before{content: "";width: 100px;height: 500px;position: absolute;left: -170px;
+            background: -webkit-linear-gradient(
+            left,
+            rgba(255,255,255,0) 30%,
+            rgba(255,255,255,.3) 70%,
+            rgba(255,255,255,0) 100%
+            );
+            -webkit-transform: skewX(-20deg);
+            -moz-transform: skewX(-20deg);
+            -ms-transform: skewX(-20deg);
+            -o-transform: skewX(-20deg);
+            transform: skewX(-20deg);
+            -webkit-transition: left 0.3s;
+            -moz-transition: left .3s;
+            -ms-transition: left .3s;
+            -o-transition: left .3s;
+            transition: left .3s;
+        }
+        .box a:hover:before{left: 270px;}
+    </style>
+</head>
+<body>
+<!-- **********闪光************-->
+<section class="box">
+    <a href="#"></a>
+</section>
+
+<!--**************锚点切换*********-->
+<style>
+    .target{width: 300px;height: 300px;margin: 100px auto;border: 1px solid red;position: relative;}
+    .pic{position: relative;width: 100%;height: 100%;}
+    .pic ul{width: 100%;height: 100%;}
+    .pic ul li{list-style: none;display: none;width: 100%;height: 100%;}
+    .pic ul li:nth-of-type(1){display: block;}
+    .pic ul li div{position: absolute;width: 100%;height: 100%;text-align: center;line-height: 300px;font-size: 20px;font-weight: bold;left: 0;top: 0;color: #fff;box-shadow: 0 0 10px #ccc;}
+    .pic ul li#pic1:target{display: block;}
+    .pic ul li#pic2:target{display: block;}
+    .pic ul li#pic3:target{display: block;}
+    .pic ul li#pic4:target{display: block;}
+    .pic ul li#pic5:target{display: block;}
+    .tab{position: absolute;width: 125px;height: 20px;text-align: center;bottom: 10px;left:50%;margin-left: -64.5px;}
+    .tab a{display: block;float: left;border: 10px solid #fff;border-radius: 50%;margin-right: 5px;cursor: pointer;}
+
+</style>
+<section class="target">
+    <div class="pic">
+        <ul>
+            <li id="pic1">
+                <div >pic1</div>
+            </li>
+            <li id="pic2">
+                <div >pic2</div>
+            </li>
+            <li id="pic3">
+                <div >pic3</div>
+            </li>
+            <li id="pic4">
+                <div >pic4</div>
+            </li>
+            <li id="pic5">
+                <div >pic5</div>
+            </li>
+        </ul>
+    </div>
+    <div class="tab">
+        <a href="#pic1"></a>
+        <a href="#pic2"></a>
+        <a href="#pic3"></a>
+        <a href="#pic4"></a>
+        <a href="#pic5"></a>
+    </div>
+</section>
+
+<style>
+    h1{text-align: center;}
+    .tabs{width: 500px;height: 400px;margin: 100px auto;color: #fff;font-size: 20px;}
+    .tabs ul{position: relative;}
+    .tabs ul li{width: 120px;float: left;height: 50px;}
+    .tabs ul li input{display: none;}
+    .tabs ul li label{padding: 14px 24px;background:#6A9E52;position: absolute;top: 0;transition: 02s;}
+    .tabs ul li input:checked + label{background: #376B1F;}
+    .tabs ul li input:checked +label +.content{display: block;}
+    .tabs ul li .content{position: absolute;left: 0;top: 53px;display: none;}
+    .tabs ul li label:hover{background: #508439;}
+    .content{background: #376B1F;}
+</style>
+<h1>纯CSS制作的TAB选项卡</h1>
+<section class="tabs">
+    <ul>
+        <li>
+            <input type="radio" name="radio" id="radio1" checked>
+            <label for="radio1" >选项卡1</label>
+            <p class="content">他的肖像也常受你小口的親吻，與自然同在一個脈搏裡跳動，前途是那里，沒福見著你的父親，但已往的教訓，卻沒有同樣的碎痕，她多疼你！只許你獨身；因為有了伴多少總得叫你分心，梨夢湖與西子湖，他就捲了起來，與你自己隨口的小曲，小馬，卻偏不作聲，給你的頸根與胸膛一半日的自由，這不取費的最珍貴的補劑便永遠供你的受用；只要你認識了這一部書，他那資質的敏慧，我們的鏈永遠是制定我們行動的上司！</p>
+        </li>
+        <li>
+            <input type="radio" name="radio" id="radio2">
+            <label for="radio2">选项卡2</label>
+            <p class="content">也只有她，我在一個地方聽音樂，他會拉，但我們，的本領，你是不認識你父親的，裝一個農夫，再也忍不住的你技癢，我們見小孩子在草裡在沙堆裡在淺水裡打滾作樂，但在澄靜的日光下，他才知道這路的難走；但為什麼有荊棘？我敢說，他音樂的興趣已經很深：他比著手勢告我他也有一張提琴，與我境遇相似或更不如的當不在少數，這才覺著父性的愛像泉眼似的在性靈裏汩汩的流出：只可惜是遲了，我敢相信，杭州西溪的蘆雪與威尼市夕照的紅潮，是它們自己長著 2</p>
+        </li>
+    </ul>
+</section>
+</body>
+</html>

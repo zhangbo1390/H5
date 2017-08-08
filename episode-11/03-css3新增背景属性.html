@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03-css3新增背景属性</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        html,body{
+            width: 100%;height: 100%;
+            /*background-image: url("imgs/bg.jpg");
+            background-color: antiquewhite;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            /*background-size: contain;*/
+            /*background: url("imgs/snow-bg.png") repeat-x,url('imgs/header-bg.png') repeat-x;*/
+        }
+        /*div{width: 300px;height: 300px;margin: 100px auto;
+            background: floralwhite;
+            background-image: url("imgs/move.gif");
+            background-repeat: no-repeat;
+            border: 20px solid transparent;
+            padding: 20px;
+            !*background-origin: padding-box;*!
+            background-clip: border-box;
+        }*/
+
+    </style>
+</head>
+<body>
+<!--
+background属性回顾
+    background-image
+    background-color
+    background-repeat
+    background-position:
+    background-attachment: fixed 定位
+css3新增背景属性
+    1.设置背景尺寸：
+        background-size：x y
+        background-size:cover   保持宽高比不变，保证盒子占满屏幕
+        background-size:contain  保证宽高比不变，保证看清全图，但是不一定占满盒子
+    2.多背景 background-image
+        background-image:url('img1') url('img2')  多个背景用逗号隔开，无限个数
+    3.背景起始区域
+        background-origin:border-box
+        background-origin:padding-box
+        background-origin:content-box
+    4.背景显示区域
+        background-clip:border-box
+        background-clip:padding-box
+        background-clip:content-box
+    5.新增颜色与渐变色
+        新增颜色：
+            rgba:在rgb的基础上多了一个a透明度值，取值范围0-1
+            hsl:H：Hue（色调），取值范围0-360；s：Saturation（饱和度），取值范围0%-100%；l:lightness（亮度），取值范围0%-100%
+        渐变色：
+            线性渐变：linear-gradient
+            径向渐变：radial-gradient
+
+
+
+-->
+
+<div></div>
+<style>
+    section{width: 500px;height: 500px;margin: 100px auto;border: 1px solid #000;}
+    section #pallet{width: 100%;height: 200px;background-color: hsl(100,20%,30%);}
+</style>
+<section>
+    <div id="pallet"></div>
+    <p>h: <input type="range" min="0" max="360" id="h" onchange="colorChange()"></p>
+    <p>s: <input type="range" min="0" max="100" id="s" onchange="colorChange()"></p>
+    <p>l: <input type="range" min="0" max="100" id="l" onchange="colorChange()"></p>
+</section>
+<script>
+function colorChange(){
+    var h = document.getElementById('h').value;
+    var s = document.getElementById('s').value;
+    var l = document.getElementById('l').value;
+    var pallet = document.getElementById('pallet');
+    pallet.style.background = 'hsl('+ h +','+ s +'%,'+ l +'%)';
+
+}
+</script>
+
+
+<h2 style="text-align: center">线性渐变</h2>
+<style>
+    .linear-gradient01{margin: 30px auto;width: 300px;height: 300px;
+        background: -webkit-linear-gradient(
+        left bottom,
+        red 30%,
+        burlywood 30%,
+        rgba(0,0,0,.4)
+        );
+    }
+    .linear-gradient02{margin: 30px auto;width: 300px;height: 300px;
+        background: -webkit-linear-gradient(
+        0deg,
+        darkblue 5px,
+        rgba(0,0,0,0)
+        ),
+        -webkit-linear-gradient(
+                90deg,
+                teal 5px,
+                rgba(0,0,0,0)
+        );
+        background-size: 2.4rem 2.4rem;
+    }
+    .linear-gradient03{margin: 30px auto;width: 300px;height: 300px;
+        background: -webkit-linear-gradient(
+        0deg,
+        darkkhaki 20%,
+        indianred 40%,
+        teal 60%,
+        magenta 80%,
+        cornflowerblue
+        );
+    }
+</style>
+<div class="linear-gradient01"></div>
+<div class="linear-gradient02"></div>
+<div class="linear-gradient03" id="linear"></div>
+<script>
+    var i = 0;
+    var time = setInterval(function(){
+        i++;
+        linear.style.background = '-webkit-linear-gradient('+ i +'deg,darkkhaki 20%,indianred 40%,teal 60%,magenta 80%,cornflowerblue)'
+        if(i==270)clearInterval(time);
+    },13);
+
+</script>
+
+<style>
+    .radial-gradient{margin: 30px auto;width: 300px;height: 300px;border-radius: 50%;
+    background: -webkit-radial-gradient(35px 35px,#FFF,#CCC,#FFF);
+    }
+</style>
+<h2 style="text-align: center">径向渐变</h2>
+<div class="radial-gradient"></div>
+
+
+
+
+
+</body>
+</html>

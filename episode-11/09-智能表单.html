@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能表单</title>
+
+</head>
+<body>
+<!--
+智能控件
+    email, tel, url, search, range, number, color, datetime, datetime-local,time, date, week, month
+    新的表单特性和函数
+        placeholder, autocomplete, autofocus, list和datalist, required, pattern, formaction(在submit里定义提交地址)
+表单验证
+    Object.addEventListener('invalid',fn1,false);
+    ev.preventDefault()
+    valueMissing: 输入值为空时， 返回的是true
+    typeMismatch: 控件值与预期类型不匹配    返回的是true
+    patternMismatch:输入值不满足pattern正则，   返回的是true
+    tooLong: 超过maxLength最大限度，超出的返回true
+    rangeUnderflow:验证的range最小值
+    customError:不符合自定义验证，
+    invalid事件：验证反馈input.addEventListener('invalid',fn,false)
+    formnovalidate：关闭验证
+
+-->
+
+
+
+
+
+<input type="color" id="color">
+
+<script>
+    console.log(color);
+    color.onchange = function(){
+        console.log(color.value);
+    };
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

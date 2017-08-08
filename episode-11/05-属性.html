@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>border,white-space,direction,unicode-bidi,text-shadow,text-stroke</title>
+</head>
+<body>
+<!--
+1.border-radius:上 右 下 左
+2.white-space:normal/nowrap/pre/pre-line/pre/wrap   空格
+3.direction:rtl/ltr    文字显示方向
+4.unicode-bidi:bidi-override   文字倒叙显示
+5.word-wrap:break-word 超出换行，切断单词
+6.word-break:break-all 超出还行，会切断单词
+5.文本超出显示省略号
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+6.文字阴影
+    text-shadow:x方向偏移 y方向偏移 模糊度 颜色
+7.元素阴影
+    box-shadow: inset(内阴影) x方向偏移 y方向偏移 模糊度 尺寸 颜色
+8.文字描边，文字填充
+    text-stroke:宽度 颜色值
+    分开写：
+        text-fill-width:宽度值
+        text-fill-color:颜色值
+9.文字大小写
+    text-transform:none/capitalize/uppercase/lowercase
+
+-->
+
+<style>
+    .border ul{width: 505px;}
+    .border ul:after{content: "";clear: both;display: block;}
+    .border ul li{list-style: none;float: left;width: 100px;height: 35px;background: #6A9E52;margin-right: 1px;}
+    .border ul li:first-child{border-radius: 5px 0 0 5px;}
+    .border ul li:last-child{border-radius: 0 5px 5px 0;}
+
+</style>
+<section class="border">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</section>
+
+<style>
+    .white{white-space: nowrap;overflow:hidden;text-overflow: ellipsis;width: 200px;height: 20px;border: 1px solid red;}
+</style>
+<section class="white">
+    超出文字显示省略号，超出文字显示省略号
+</section>
+
+<style>
+    .text{font-size: 50px;margin: 20px;-webkit-text-stroke: 5px red;color: #fff;font-weight: bold;}
+</style>
+<section class="text">
+    文字描边
+</section>
+</body>
+</html>

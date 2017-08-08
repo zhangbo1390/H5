@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器</title>
+    <style>
+        a:focus{background: rebeccapurple;}
+    </style>
+</head>
+<body>
+<!--
+css选择器
+    css1-2复习
+        p+a 相邻兄弟，表示紧跟着p标签的a标签
+        p>a 子类，表示p下边的a
+        伪类： :hover :active :visited :link :focus  :first-child
+        伪元素： :first-letter :first-line :before :after
+        属性选择器： a[title] [title=www]
+    css3
+        属性选择器(扩展)：
+            a[title^=a] 以a开头
+            a[title$=b] 以b结尾;
+            a[title*=b] 包含b
+        选择同级的弟弟： p ~ a
+        伪类：
+            :nth-child()
+                :nth-child(1) 第一个元素
+                :nth-child(odd) 所有奇数子元素
+                :nth-child(even) 所有偶数子元素
+                :nth-child(an+b) 表达式，n为自然数
+            :nth-last-child()
+            :nth-of-type()
+                p:nth-of-type(2) 第二个p
+            :nth-last-of-type()
+            :not() 除了什么之外
+            :empty 为空的元素
+            :target 锚点样式
+            :disabled :enabled 被禁/未被禁
+            :checked 被选中
+
+
+
+
+-->
+
+<a href="">a1</a>
+<style>
+    .clearFloat:after{display: block;content: "";clear: both;/*清除浮动方法*/}
+    .clear-float{overflow: hidden;/*清除浮动方法*/}
+    ul li{width: 100px;height: 30px;background: plum;float: left;text-align: center;list-style: none;line-height: 30px;}
+    li~li{color: red;}
+</style>
+<ul class="clear-float">
+    <li>11</li>
+    <li>22</li>
+    <li>33</li>
+    <li>44</li>
+    <li>55</li>
+</ul>
+<a href="" title="aa">aa</a>
+<a href="" title="ab">ab</a>
+<a href="" title="bb">bb</a>
+<a href="" title="bc">bc</a>
+<a href="" title="cc">cc</a>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>H5新增标签</title>
+    <style>
+        *{padding: 0;margin: 0;}
+        body{font: 14px/34px 'Mcrosoft Yahei';}
+        header{width: 700px;background:peachpuff;text-align: center;margin: 0 auto;display: block;}
+        article.content{width: 700px;height: 500px;background: palegoldenrod;margin: 0 auto;text-align: center;position: relative;}
+        article.content nav{height: 30px;line-height: 34px;width: 100%;}
+        article.content nav ul li{width: 99px;margin-right: 1px;background: plum;float: left;list-style: none;}
+        article.content .sec-left{float: left;width: 80%;background: cornflowerblue;height: 170px;line-height: 170px;}
+        article.content .sec-right{float: right;width: 19%;background: darkkhaki;height: 170px;line-height: 170px;}
+        article.content aside{position: absolute;width: 40px;height: 240px;top: 50%;margin-top: -120px;background: navajowhite;right: -50px;}
+        article.content aside a{text-decoration: none;color: #000;display: block;width: 100%;height: 29px;margin-bottom: 1px;}
+        footer{width: 700px;height: 100px;margin: 0 auto;margin-top: 15px;text-align: center;line-height: 100px;background: darkgray;}
+        article.special_tags{background: ivory;width: 700px;margin: 15px auto;}
+        dialog{width: 100px;height: 100px;}
+        article.other_canvas,article.other_svg{width: 700px;height: 300px;margin: 15px auto;border: 1px solid darkgray;}
+        article.other_svg{}
+    </style>
+</head>
+<body>
+<!--
+1.标签结构
+a)header定义文档的头部区域，一般用在顶部
+b)article 定义页面独立的文章内容、帖子、博客文章、评论、新闻等可以使用
+c)nav定义导航，替代ul和li定义的导航
+d)section 定义一块区域，一般用来写主题内容部分
+e)aside 定义侧边栏，侧边信息可以使用
+f)figure 定义一块独立的内容，通常用来展示图片及其描述
+g)figcaption 定义figure的标题
+h)iframe框架，frameset已经被淘汰
+i)footer定义文档的尾部，一般用他结尾
+
+2.特殊样式标签
+a)mark 突出显示文字
+b)meter 度量衡 max,min,value,low,high,optimum
+c)progress 进度条 max,value
+d)ruby 内容+注释 rt注释内容 rp不支持时显示
+
+3.兼容性不是很好的标签
+a)dialog 自定义对话框 open属性 脱离文档流的标签
+b)bdi 单独设置文字摆放方式
+c)details/summary 描述某部分的详情，summary为details的标题
+
+4.其他标签
+a)canvas 画图，画出来的图会模糊
+b)svg 画图  矢量图，不会模糊
+
+7. 低版本不兼容怎么办？
+-->
+
+<header>
+    <h1>header</h1>
+</header>
+<article class="content">
+    <nav>
+        <ul>
+            <li>nav</li>
+            <li>nav</li>
+            <li>nav</li>
+            <li>nav</li>
+            <li>nav</li>
+            <li>nav</li>
+            <li>nav</li>
+        </ul>
+    </nav>
+    <section class="sec-left">section</section>
+    <section class="sec-right">section</section>
+    <aside>
+        <a href="">aside</a>
+        <a href="">aside</a>
+        <a href="">aside</a>
+        <a href="">aside</a>
+        <a href="">aside</a>
+        <a href="">aside</a>
+        <a href="">aside</a>
+        <a href="">aside</a>
+    </aside>
+    <iframe src="https://www.baidu.com/" frameborder="0" width="100%" height="300px"></iframe>
+</article>
+<article class="special_tags">
+    This is a <mark>mark</mark> tag.
+    <br>
+    <meter value="2" min="0" max="10" low="5" high="8"></meter><br>
+    <meter value="6" min="0" max="10" low="5" high="8"></meter><br>
+    <meter value="9" min="0" max="10" low="5" high="8"></meter><br>
+
+    <meter value="2" min="0" max="10" low="5" high="8" optimum="9"></meter><br>
+    <meter value="6" min="0" max="10" low="5" high="8" optimum="9"></meter><br>
+    <meter value="9" min="0" max="10" low="5" high="8" optimum="9"></meter><br>
+
+    <meter value="0.5"></meter><br>
+
+    <progress  max="100" id="bar"> <div>您的浏览器不支持progress标签</div></progress><br>
+    <script>
+        var n = 0;
+        function step(){
+            n++;
+            bar.value = n;
+            if(n<100)requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    </script>
+
+    <ruby>
+        龙 <rt>long</rt> <rp>您的浏览器不支持ruby标签!</rp>
+    </ruby>
+    <br>
+    <hr>
+    <dialog open>自定义对话框</dialog>
+
+    <section>
+        描述商品的详情 <button onclick="show(this)" id="btn">open</button>
+        <details id="details">
+            <summary>小米笔记本</summary>
+            <p>商品详情</p>
+            <dl>
+                <dt>屏幕</dt>
+                <dd>全贴合技术</dd>
+                <dd>分辨率高达1920*1081，清晰度是24左面显示器</dd>
+                <dt>电池</dt>
+                <dd>12.5续航时间</dd>
+                <dd>支持1C快充技术，半小时就能重一般点亮</dd>
+                <dt>处理器</dt>
+                <dd>英特尔酷睿I5旗舰处理器</dd>
+            </dl>
+        </details>
+    </section>
+    <script>
+        var show = function(){
+            details.open = details.open ? false : true;
+            btn.innerHTML = details.open ? "close" : "open";
+        }
+    </script>
+
+</article>
+<article class="other_canvas">
+    <canvas id="canvas" width="700" height="300">您的浏览器不支持此标签，请更换浏览器.</canvas>
+</article>
+<article class="other_svg">
+    <svg xmlns="http://www.w3.org/2000/svg" width="700" height="300">
+        <polygon points="200 170 400 170 240 280 300 100 360 280 200 170" fill-rule="nonzero"></polygon>
+    </svg>
+</article>
+<script>
+    var canvas = document.getElementById('canvas');
+    var cxt = canvas.getContext('2d');
+    cxt.beginPath();
+    cxt.moveTo(250,80);
+    cxt.lineTo(350,80);
+    cxt.lineTo(400,160);
+    cxt.lineTo(200,160);
+    cxt.closePath();
+
+    cxt.fillStyle = 'pink';
+    cxt.fill();
+
+    cxt.strokeStyle = 'pink';
+    cxt.stroke();
+</script>
+
+
+<footer>footer</footer>
+
+<script>
+    //低版本不兼容时，需要创建此标签
+    document.createElement('header');
+    document.createElement('nav');
+    document.createElement('article');
+    document.createElement('aside');
+    document.createElement('footer');
+    document.createElement('section');
+
+</script>
+</body>
+</html>

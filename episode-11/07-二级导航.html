@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二级导航</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{-webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;}
+        nav{width: 100%;height: 50px;background: peachpuff;}
+        nav ul:after{content: "";display: block;clear: both;}
+        nav ul li{width: 10%;list-style: none;float: left;text-align: center;height: 100%;line-height: 50px;cursor:pointer;-webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;}
+        nav ul li a{text-decoration: none;color: #000;border-right: 1px solid #CCC;display: block;width: 100%;height: 100%;}
+
+        nav ul li.dropDown .dropDownMenu:after{content: "";display: block;clear: both;}
+        nav ul li.dropDown .dropDownMenu{width: 100%;display: none;}
+        nav ul li.dropDown .dropDownMenu li{width: 100%;float: none;}
+        nav ul li.dropDown .dropDownMenu li a{border-right: none;background: cornflowerblue;display: block;height: 100%;width: 100%;border-bottom: 1px solid #ddd;}
+
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="#">导航1</a></li>
+        <li class="dropDown">
+            <a href="#">导航2</a>
+            <ul class="dropDownMenu">
+                <li><a href="#">导航2-1</a></li>
+                <li><a href="#">导航2-2</a></li>
+                <li><a href="#">导航2-3</a></li>
+            </ul>
+        </li>
+        <li><a href="#">导航3</a></li>
+        <li class="dropDown">
+            <a href="#">导航4</a>
+            <ul class="dropDownMenu">
+                <li><a href="#">导航4-1</a></li>
+                <li><a href="#">导航4-2</a></li>
+                <li><a href="#">导航4-3</a></li>
+            </ul>
+        </li>
+        <li class="dropDown">
+            <a href="#">导航5</a>
+            <ul class="dropDownMenu">
+                <li><a href="#">导航5-1</a></li>
+                <li><a href="#">导航5-2</a></li>
+                <li><a href="#">导航5-3</a></li>
+            </ul>
+        </li>
+        <li><a href="#">导航6</a></li>
+        <li><a href="#">导航7</a></li>
+        <li class="dropDown">
+            <a href="#">导航8</a>
+            <ul class="dropDownMenu">
+                <li><a href="#">导航8-1</a></li>
+                <li><a href="#">导航8-2</a></li>
+                <li><a href="#">导航8-3</a></li>
+            </ul>
+        </li>
+        <li><a href="#">导航9</a></li>
+        <li><a href="#">导航10</a></li>
+    </ul>
+</nav>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script>
+
+
+    $(function(){
+        (function(){
+            $('nav ul li').hover(function(){
+                $(this).find('.dropDownMenu').slideToggle(200);
+            });
+        })()
+    })
+</script>
+</body>
+</html>

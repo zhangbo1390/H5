@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类太极</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        div{margin: 100px auto;width: 96px;height: 48px;border-width: 2px 2px 50px 2px;border-color: #000;border-style: solid;
+            -webkit-border-radius:50%;
+            -moz-border-radius:50%;
+            border-radius:50%;
+            position: relative;
+            -webkit-animation:move 2s linear infinite;
+            -o-animation:move 2s linear infinite;
+            animation:move 2s linear infinite;
+        }
+        div:before{content:"";width: 12px;height: 12px;border: 19px solid #000;
+            -webkit-border-radius:50%;
+            -moz-border-radius:50%;
+            border-radius:50%;
+            position: absolute;left: 0;top: 50%;background: #fff;}
+        div:after{content:"";width: 12px;height: 12px;border: 19px solid #fff;
+            -webkit-border-radius:50%;
+            -moz-border-radius:50%;
+            border-radius:50%;
+            position: absolute;left: 50%;top: 50%;background: #000;}
+        @-webkit-keyframes move {
+            from{transform: rotate(0deg);}
+            to{transform: rotate(360deg);}
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

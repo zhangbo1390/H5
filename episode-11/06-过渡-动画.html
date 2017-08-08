@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过渡，动画</title>
+</head>
+<body>
+<!--
+过渡：
+    1.transition:property duration delay timing-function
+        transition-timing-function:过渡效果速度曲线
+        linear/ease/ease-in/ease-out/ease-in-out
+    2。过渡完成事件
+        google内核：obj.addEventListener('webkitTransitionEnd',function(){});
+        标准：     obj.addEventListener('transitionEnd',function(){});
+动画：
+    1.animation: name duration delay timing-function iteration-count direction;
+    animation-play-state:paused/running
+     @keyframe animation-name{
+        from {}
+        to {}
+     }
+     @keyframe animation-name{
+        0%{}
+        50%{}
+        100%{}
+     }
+
+-->
+<style>
+    section{width: 500px;height: 300px;margin: 100px auto;box-shadow:  0 0 50px #ccc;}
+    section span{display: block;width: 100px;height: 60px;cursor: pointer;
+        -webkit-transition: 2s;
+        -moz-transition: 2s;
+        -ms-transition: 2s;
+        -o-transition: 2s;
+        transition: 2s;}
+    section span:nth-child(odd){background: #6A9E52;}
+    section span:nth-child(even){background: #708090;}
+    section span:hover{width: 500px;background: darkorange;}
+    section span:nth-child(1){
+        -webkit-transition-timing-function: linear;
+        -moz-transition-timing-function: linear;
+        -ms-transition-timing-function: linear;
+        -o-transition-timing-function: linear;
+        transition-timing-function: linear;}
+    section span:nth-child(2){
+        -webkit-transition-timing-function: ease;
+        -moz-transition-timing-function: ease;
+        -ms-transition-timing-function: ease;
+        -o-transition-timing-function: ease;
+        transition-timing-function: ease;}
+    section span:nth-child(3){
+        -webkit-transition-timing-function: ease-in;
+        -moz-transition-timing-function: ease-in;
+        -ms-transition-timing-function: ease-in;
+        -o-transition-timing-function: ease-in;
+        transition-timing-function: ease-in;}
+    section span:nth-child(4){
+        -webkit-transition-timing-function: ease-out;
+        -moz-transition-timing-function: ease-out;
+        -ms-transition-timing-function: ease-out;
+        -o-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;}
+    section span:nth-child(5){
+        -webkit-transition-timing-function: ease-in-out;
+        -moz-transition-timing-function: ease-in-out;
+        -ms-transition-timing-function: ease-in-out;
+        -o-transition-timing-function: ease-in-out;
+        transition-timing-function: ease-in-out;}
+</style>
+<section>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</section>
+<script>
+    var lastSpan = document.getElementsByTagName('span')[4];
+    lastSpan.addEventListener('webkitTransitionEnd',function(){
+        this.style.background = 'red';
+    })
+</script>
+
+<style>
+    .animate{width: 600px;height: 500px;margin: 50px auto;position: relative;
+        -webkit-box-shadow: 0 0 10px #ccc;
+        -moz-box-shadow: 0 0 10px #ccc;
+        box-shadow: 0 0 10px #ccc;}
+   .animate  .box{width: 100px;height: 100px;background: #d9ecff;position: absolute;left: 0;top: 0;
+       -webkit-animation:move 8s infinite alternate linear;
+       -o-animation:move 8s infinite alternate linear;
+       animation:move 8s infinite alternate linear;}
+    .animate  .box:hover{animation-play-state: paused;}
+
+    @-webkit-keyframes move {
+        0%{left: 0;top: 0;}
+        25%{left: 500px;top: 0;}
+        50%{left: 500px;top: 400px;}
+        75%{left: 0;top: 400px;}
+        100%{left: 0;top: 0;}
+    }
+</style>
+<div class="animate">
+    <div class="box"></div>
+</div>
+<script>
+    var oDiv = document.getElementsByClassName('box')[0];
+    oDiv.addEventListener('webkitAnimationStart',function(){
+        alert(1);
+    });
+    oDiv.addEventListener('webkitAnimationIteration',function(){
+
+    });
+    oDiv.addEventListener('webkitAnimationEnd',function(){
+        alert(3);
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>纯CSS3无缝滚动</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .box{border: 1px solid #ccc;overflow: hidden;width: 952px;height: 254px;margin: 100px auto;position: relative;}
+        ul{position: absolute;left: 0;top: 0;width: 1000%;height: 254px;;
+            -webkit-animation:scroll 5s linear infinite;
+            -o-animation:scroll 5s linear infinite;
+            animation:scroll 5s linear infinite;
+        }
+        ul:after{content: "";display: block;clear: both;}
+        ul li{list-style: none;float: left;width:180px;height: 254px;margin: 0 5px;}
+        ul:hover{animation-play-state: paused;}
+        @-webkit-keyframes scroll {
+            0%{left: 0;}
+            100%{left: -952px;}
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li><img src="imgs/07-1.jpg" alt=""></li>
+        <li><img src="imgs/07-2.jpg" alt=""></li>
+        <li><img src="imgs/07-3.jpg" alt=""></li>
+        <li><img src="imgs/07-4.jpg" alt=""></li>
+        <li><img src="imgs/07-5.jpg" alt=""></li>
+        <li><img src="imgs/07-1.jpg" alt=""></li>
+        <li><img src="imgs/07-2.jpg" alt=""></li>
+        <li><img src="imgs/07-3.jpg" alt=""></li>
+        <li><img src="imgs/07-4.jpg" alt=""></li>
+        <li><img src="imgs/07-5.jpg" alt=""></li>
+    </ul>
+</div>
+
+</body>
+</html>

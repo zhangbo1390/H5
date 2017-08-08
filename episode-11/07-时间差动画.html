@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时间差动画</title>
+    <style>
+        *{padding: 0;margin: 0;}
+        html,body{width: 100%;height: 100%;}
+        .shadow{width: 1100px;height: 1px;margin: 100px auto 80px auto;
+            -webkit-box-shadow: 2px 2px 5px #00ff00;
+            -moz-box-shadow: 2px 2px 5px #00ff00;
+            box-shadow: 2px 2px 5px #00ff00;}
+        .demo1{width: 1100px;height:300px; -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;}
+        .demo1 ul:after{content: "";display: block;clear: both;}
+        .demo1 ul li{list-style: none;float: left;margin: 30px;text-align: center;width: 214px;height: 300px;-webkit-box-sizing: border-box;text-shadow: 0 0 5px #000;position: relative;color: #fff;line-height: 35px;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;overflow: hidden;
+            cursor: pointer;
+            }
+        .demo1 ul li div{
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            -ms-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;}
+        .demo1 ul li:nth-of-type(1){background: #00A0EA;}
+        .demo1 ul li:nth-of-type(2){background: #97C412;}
+        .demo1 ul li:nth-of-type(3){background: #ED9644;}
+        .demo1 ul li:nth-of-type(4){background: #5CC8B0;}
+        .demo1 ul li .pic{width: 100%;height: 50%;background: url("imgs/07-bg_icon.png") no-repeat center;}
+        .demo1 ul li .pic img{width: 80px;height: 80px;vertical-align: middle;
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            -ms-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;}
+        .demo1 ul li .pic span{height: 100%;display: inline-block;vertical-align: middle;}
+
+        .demo1 ul li .content{width: 100%;height: 50%;position: absolute;bottom: 0;left: 0;margin-top: 10px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transition-delay: .5s;
+            -moz-transition-delay: .5s;
+            -ms-transition-delay: .5s;
+            -o-transition-delay: .5s;
+            transition-delay: .5s;
+            }
+        .demo1 ul li .content span{background: rgba(0,0,0,.3);padding: 3px 10px;}
+
+        .demo1 ul li .content-hover{width: 100%;height: 50%;background: rgba(0,0,0,.5);position: absolute;bottom: 0;left: 100%;margin-top: 10px;padding: 10px 30px;-webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            }
+
+        .demo1 ul li:hover .pic{background-image: none;}
+        .demo1 ul li:hover .pic img{width: 100px;height: 100px;transform: rotate(360deg);}
+        .demo1 ul li:hover .content{bottom: -50%;}
+        .demo1 ul li:hover .content-hover{left: 0;
+            -webkit-transition-delay: 1.1s;
+            -moz-transition-delay: 1.1s;
+            -ms-transition-delay: 1.1s;
+            -o-transition-delay: 1.1s;
+            transition-delay: 1.1s;}
+
+
+    </style>
+</head>
+<body>
+<div class="shadow"></div>
+<div class="demo1">
+    <ul>
+        <li>
+            <div class="pic"><span></span><img src="imgs/07-html.png" alt=""></div>
+            <div class="content">
+                <h1>网页制作</h1>
+                <p>HTML</p>
+                <span>立即查看</span>
+            </div>
+            <div class="content-hover">
+                <span></span>
+                <h1>网页制作</h1>
+                <p>HTML课程：HTML+DIV+CSS项目实战，2个月一期</p>
+            </div>
+        </li>
+        <li>
+            <div class="pic"><span></span><img src="imgs/07-html5.png" alt=""></div>
+            <div class="content">
+                <h1>网页制作</h1>
+                <p>HTML</p>
+                <span>立即查看</span>
+            </div>
+            <div class="content-hover">
+                <span></span>
+                <h1>网页制作</h1>
+                <p>HTML课程：HTML+DIV+CSS项目实战，2个月一期</p>
+            </div>
+        </li>
+        <li>
+            <div class="pic"><span></span><img src="imgs/07-js.png" alt=""></div>
+            <div class="content">
+                <h1>网页制作</h1>
+                <p>HTML</p>
+                <span>立即查看</span>
+            </div>
+            <div class="content-hover">
+                <span></span>
+                <h1>网页制作</h1>
+                <p>HTML课程：HTML+DIV+CSS项目实战，2个月一期</p>
+            </div>
+        </li>
+        <li>
+            <div class="pic"><span></span><img src="imgs/07-demo.png" alt=""></div>
+            <div class="content">
+                <h1>网页制作</h1>
+                <p>HTML</p>
+                <span>立即查看</span>
+            </div>
+            <div class="content-hover">
+                <span></span>
+                <h1>网页制作</h1>
+                <p>HTML课程：HTML+DIV+CSS项目实战，2个月一期</p>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

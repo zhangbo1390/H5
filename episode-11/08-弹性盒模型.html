@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹性和模型-移动端/响应式</title>
+</head>
+<body>
+<!--
+弹性盒模型：
+    设置在父元素容器上的属性：
+        display:flex  给父元素设置
+        flex-direction:容器内项目的排列方向    row/row-reverse/column/column-reverse
+        flex-wrap: 容器内项目换行方式  nowrap/wrap/wrap-reverse
+        flex-flow: 以上两个属性的简写方式
+        justity-content: 项目在主轴上的对齐方式 flex-start/flex-end/center/space-between/space-around
+        align-items: 项目在中心处如何对齐  flex-start/flex-end/center/stretch/baseline
+        align-content: 设置子元素的对齐方式 flex-start/flex-end/center/space-between/space-around
+    设置在子元素上的属性：
+        ·order: 项目的排列顺序。数值越小，排列越靠前，默认为0
+        ·flex-grow: 项目的放大比例，默认为0，即如果存在剩余空间，也不放大
+        ·flex-shrink:站其他元素的多少分之一
+        ·flex-basis:设置初始元素为多少像素
+        ·align-self:允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
+允许调整大小：
+    ·resize: none/both/horizontal/vertical   注：加上overflow才能生效
+倒影
+    ·box-reflect: a b c d;
+        a:倒影方向  left/right/above/below
+        b:距离本体多远
+        c: 渐变/倒影渐变方式linear-gradient()...
+        d: 遮盖层 url(xxx.png)
+怪异盒模型：
+    box-sizing:content-box  添加到子元素上
+多列布局：
+    column: a b; 规定列的宽度和列数
+        a: 每列的【最小】宽度  column-width
+        b:列数 column-count
+    column-gap: 列之间间隙的大小
+    column-rule: 列与列之间的边框，值和border一样
+    column-span: none/all 设置给子元素，规定这个元素跨不跨列
+禁止文字选中
+    user-select:none
+
+
+
+
+
+
+
+
+-->
+<style>
+    .flex{display: flex;width: 1000px;height: 200px;border: 1px solid #ccc;justify-content: space-between;align-items: center;}
+    .flex div{height: 90%;border: 1px solid #376B1F;width: 100px;}
+</style>
+<div class="flex">
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+    <div class="box4">4</div>
+    <div class="box5">5</div>
+</div>
+
+<style>
+    .flex2{width: 1000px;height: 300px;display: flex;box-shadow: 0 0 5px #ccc;margin-top: 20px;}
+    .flex2 div{border: 1px solid red;height: 100%;flex-shrink: 1;flex-grow: 1;}
+    .flex2 div:nth-child(3){order: 3;flex-grow: 2;}
+</style>
+<div class="flex2">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+</div>
+
+<style>
+    .reflect{width:533px;height:300px;-webkit-box-reflect: below 0 -webkit-linear-gradient(top,rgba(255,255,255,0),rgba(255,255,255,1));margin: 0 auto 600px;}
+</style>
+<div class="reflect"><img src="imgs/bg.jpg" alt=""></div>
+
+
+<style>
+    .column{box-shadow: 0 0 10px #ccc;column-count: 4;column-gap: 20px;column-rule: 5px solid red;-webkit-user-select: none;}
+</style>
+<div class="column">
+    2017年1月28日 - 今天学习了一下css3的box-sizing属性,顺便又温习了一下css的盒模型,最后觉得有必要对盒模型做一个全面整理。先不考虑css3的情况,盒模型一共有两种…,...先不考虑css3的情况,盒模型一共有两种模式,一种是标准模式,另一种就是怪异模式。 当你用编辑器新建一个html页面的时候你一定会发现最顶上都会有一个DOCTYPE标签...
+</div>
+
+<style>
+    html,body{width: 100%;height: 100%;}
+    *{margin: 0;padding: 0;}
+    .flex-test{margin-top:30px;width: 100%;height: 300px;display: flex;}
+    .flex-test div{flex-grow: 1;border: 1px solid #ccc;}
+</style>
+<div class="flex-test">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+</body>
+</html>
