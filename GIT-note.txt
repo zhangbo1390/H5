@@ -1,0 +1,51 @@
+git github
+1.安装git
+
+2.创建文件夹 - 在文件夹里右键选择“git bash here” - 命令框
+    git init (让git管理你的文件)
+
+3.工作区 - 写代码的地方
+    git add index.html (将工作区文件提交到 暂存区)
+    git add .(添加所有文件到 暂存区)
+
+4. 保存到 本地代码仓库（分支）
+    git commit -m "新增index.html文件"
+
+5. 本地代码仓库  - 远程代码仓库
+    git remote add origin git@github.com:zhagingbo1390/test.git(关联本地仓库与远程仓库)
+    ssh-keygen -t rsa -c "1010842440@qq.com" (远程 授权给本地 可以 上传)
+    添加ssh中pub文件中的密钥到SSH keys 中
+    git pull origin master(将master分支拉到本地 git pull拉取所有分支)
+    git push -u origin master
+
+6. 克隆clone(任何人的文件都可以克隆)
+    创建文件夹 - 右击git管理 - git init - git clone git@github.com:zhangbo1390/test.git
+
+7. 分支branch
+    git branch develobranch (创建分支)
+    git branch (查看分支)
+    git checkout develobranch(切换分支)
+    git branch -d develobranch(删除分支)
+
+    git add .
+    git commit -m "develobranch branch created a new txt file"
+
+8. 整合分支
+    git merge develobranch(需要在master下整合)
+
+9. 版本回退
+    git log
+    git reset --hard commitID
+
+
+注：1.第一次在本机操作git，设置user.email,user.name
+    git config --global user.email "1010842440@qq.com"
+    git config --global user.name "sunny"
+
+    2.查看comment， git log
+
+    3.廖雪峰 的官方网站(https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
+
+git add .
+git comment -m "阴阳师"
+git push -u origin master
