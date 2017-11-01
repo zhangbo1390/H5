@@ -48,4 +48,4 @@ git github
 
 git add .
 git comment -m "阴阳师"
-git push -u repository-name master
+git push -u origin master
