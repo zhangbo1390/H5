@@ -1,5 +1,6 @@
 git github
 1.安装git
+https://git-scm.com/downloads
 
 2.创建文件夹 - 在文件夹里右键选择“git bash here” - 命令框
     git init (让git管理你的文件)
