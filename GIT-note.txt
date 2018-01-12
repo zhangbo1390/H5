@@ -22,7 +22,7 @@ https://git-scm.com/downloads
     添加ssh中pub文件中的密钥到SSH keys 中(setting -> SSH and GPG keys)
     
     
-    git remote add origin git@github.com:zhagingbo1390/test.git(关联本地仓库与远程仓库)
+    git remote add origin git@github.com:zhagingbo1390/test.git(关联本地仓库与远程仓库,添加后远程数据库的名字是orgin)
     git pull origin master(将master分支拉到本地 git pull拉取所有分支)
     git push -u origin master
     
