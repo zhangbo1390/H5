@@ -1,6 +1,10 @@
 git github
 1.安装git
 https://git-scm.com/downloads
+注：
+    第一次在本机操作git，需设置user.email, user.name
+    git config --global user.email "1010842440@qq.com"
+    git config --global user.name "sunny"
 
 2.创建文件夹 - 在文件夹里右键选择“git bash here” - 命令框
     git init (让git管理你的文件)
@@ -39,11 +43,7 @@ https://git-scm.com/downloads
     git reset --hard commitID
 
 
-注：1.第一次在本机操作git，设置user.email,user.name
-    git config --global user.email "1010842440@qq.com"
-    git config --global user.name "sunny"
-
-    2.查看comment， git log
+注：2.查看comment， git log
 
     3.廖雪峰 的官方网站(https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 
