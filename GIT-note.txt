@@ -19,11 +19,12 @@ https://git-scm.com/downloads
 5. 本地代码仓库  - 远程代码仓库
    在windows (C:\Users\XbZhang) 主目录下如果没有.ssh目录，先创建：
     ssh-keygen -t rsa -c "1010842440@qq.com" (远程 授权给本地 可以 上传)
-    添加ssh中pub文件中的密钥到SSH keys 中
-    git pull origin master(将master分支拉到本地 git pull拉取所有分支)
-    git push -u origin master
+    添加ssh中pub文件中的密钥到SSH keys 中(setting -> SSH and GPG keys)
+    
     
     git remote add origin git@github.com:zhagingbo1390/test.git(关联本地仓库与远程仓库)
+    git pull origin master(将master分支拉到本地 git pull拉取所有分支)
+    git push -u origin master
     
     
 
